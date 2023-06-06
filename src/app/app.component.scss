@@ -1,0 +1,32 @@
+.box {
+  height:300px;
+  width: 300px;
+  overflow-y: scroll;
+  background: red;
+}
+
+.products--grid{
+    display: flex;
+    flex-direction: column;
+    div {
+      img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+        border-color: aqua;
+      }
+      h2,p{
+          margin: 0;
+      }
+    }
+
+}
+
+@media screen and (min-width: 40em) { //Media para cuando sea en PC
+  .products--grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); //5 columnas fraccionadas
+  grid-gap: 15px; // que haya 15px entre las imagenes
+  }
+}
