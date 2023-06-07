@@ -7,11 +7,17 @@ import { Product } from './product.model'; // Exporto al interfaz
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent { //El componente debe ser publico para que las otras clases accedan a el
+  widthImg = 10;
   title = 'online-store';
   img = 'https://i1.wp.com/blog.enriqueoriol.com/wp-content/uploads/2018/01/AngularLogo.jpg?fit=1200%2C675';
   name = "Nicolas";
   age = 21;
   btnDisabled = true;
+  register = {
+    name: '',
+    email: '',
+    password: '',
+  }
   person = { //Renderizamos un objeto
     name: "Juan",
     age: 20,
@@ -19,6 +25,11 @@ export class AppComponent { //El componente debe ser publico para que las otras 
   }
   names: string []= ['Juan','Nicolas','Nicol','Natalia'] ;
   newName = '';
+  box = {
+    width:100,
+    height:100,
+    background: 'red',
+  }
   products : Product[] = [  //Creamos la interfaz y que sea igual a esa
       {
         name: 'Harry Potter',
@@ -97,5 +108,8 @@ export class AppComponent { //El componente debe ser publico para que las otras 
     }
     deleteName(index: number){ //Recibo la posicion
       this.names.splice(index,1);
+    }
+    onRegister(){
+      console.log(this.register);
     }
 }

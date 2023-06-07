@@ -20,9 +20,30 @@
           margin: 0;
       }
     }
-
 }
-
+.message-error{
+  background: red;
+  color: white;
+  opacity: 0; //No se vera
+  transition: all linear .5s;
+  &.invalid{ //Si esta el mensaje con la clase invalido se muestra el mensaje
+    opacity: 1;
+  }
+}
+.line-error{
+  height: 0;
+  border-bottom: 3px solid;
+  &.invalid{ //Si esta el mensaje con la clase invalido se muestra el mensaje
+    border-color: red;
+  }
+  &.valid{ //Si esta el mensaje con la clase invalido se muestra el mensaje
+    border-color: green;
+  }
+}
+.estilosDiv{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 @media screen and (min-width: 40em) { //Media para cuando sea en PC
   .products--grid{
   display: grid;
